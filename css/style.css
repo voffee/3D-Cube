@@ -8,7 +8,11 @@
 
 /* General Styling */
 body {
-
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .container {
@@ -16,11 +20,57 @@ body {
 }
 
 .scene {
+    height: 200px;
+    width: 200px;
 
+    perspective: 600px;
 }
 
 .cube {
-    
+    height: 100%;
+    width: 100%;
+
+    transform-style: preserve-3d;
+
+    position: relative;
+
+    & .cube-face {
+        height: 100%;
+        width: 100%;
+
+        color: #FFF;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        /* position: absolute; */
+    }
+
+    & .cube-front {
+        background-color: #D2042D;
+        opacity: 0.9;
+    }
+
+    & .cube-back {
+        background-color: green;
+    }
+
+    & .cube-right {
+        background-color: yellow;
+    }
+
+    & .cube-left {
+        background-color: cyan;
+    }
+
+    & .cube-top {
+        background-color: blue;
+    }
+
+    & .cube-bottom {
+        background-color: hotpink;
+    }
 }
 
 /* Utility Classes */
