@@ -3,6 +3,7 @@
 const cube = document.querySelector(".cube");
 let x = 0;
 let y = 0;
+const step = 90;
 
 function keyHandler(e) {
     const keyPress = e.key;
@@ -13,13 +14,29 @@ function keyHandler(e) {
     switch (keyPress) {
 
         case "ArrowUp":
-        // cube.style.setProperty('--y', `${y}px`);
-        console.log(keyPress);
+        x = x + step;
+        break;
+
+        case "ArrowDown":
+        x = x - step;
+        break;
+
+        case "ArrowRight":
+        y = y - step;
+        break;
+
+        case "ArrowLeft":
+        y = y + step;
         break;
 
         default:
             console.log("Not a valid rotation key.");
     }
+
+        cube.style.setProperty('--x', `${x}deg`);
+        cube.style.setProperty('--y', `${y}deg`);
+        console.log(keyPress);
+
 }
 
 window.addEventListener("keydown", keyHandler);

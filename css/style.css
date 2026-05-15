@@ -1,9 +1,9 @@
 /* Root Variables */
 :root {
-    --x: 0px;
-    --y: 0px;
-    --degree: 0deg;
+    --x: 0deg;
+    --y: 0deg;
 }
+
 /* Global Reset */
 * {
     margin: 0;
@@ -28,7 +28,6 @@ body {
     height: 200px;
     width: 200px;
     margin: 80px;
-    /* border: 1px solid #CCC; */
 
     perspective: 600px;
 }
@@ -38,7 +37,8 @@ body {
     width: 100%;
 
     transform-style: preserve-3d;
-    transform: ;
+    transform: rotateX(var(--x)) rotateY(var(--y));
+    transition: 0.4s;
     position: relative;
 
     & .cube-face {
